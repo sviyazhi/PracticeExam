@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PracticeDOM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #clock {
+      font-size: 40px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div id="clock">00:00:00</div>
+
+  
+  <h1 id="main-heading">Original Heading</h1>
+  <p id="main-paragraph">Original paragraph text.</p>
+
+  <script>
+    //Q14: 
+    setInterval(() => {
+      const colors = ["lightblue", "lightgreen", "lavender", "lightyellow", "lightpink"];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
+    }, 10000); 
+
+    // Q15
+    function updateTime() {
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString('en-GB'); 
+      document.getElementById("clock").textContent = timeStr;
+    }
+    setInterval(updateTime, 1000);
+    updateTime(); 
+
+    //Q16
+    document.getElementById("main-heading").textContent = "Updated Heading";
+    document.getElementById("main-paragraph").textContent = "paragraph updated using JavaScript.";
+  </script>
+
+</body>
+</html>
+
